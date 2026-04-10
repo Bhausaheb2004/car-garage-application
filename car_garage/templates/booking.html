@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Booking</title>
+
+<style>
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    color: orange;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 15px 0;
+}
+
+.hero button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #ff8800;
+}
+
+/* -------------------- SERVICES -------------------- */
+.services {
+    padding: 60px 20px;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px orange;
+}
+
+/* -------------------- GALLERY -------------------- */
+.gallery {
+    padding: 50px 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* -------------------- BOOKING -------------------- */
+.booking {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.booking form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.booking input,
+.booking select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+}
+
+.booking input:focus,
+.booking select:focus {
+    outline: none;
+    border: 1px solid orange;
+}
+
+.booking button {
+    width: 100%;
+    padding: 12px;
+    background: orange;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.booking button:hover {
+    background: #ff8800;
+}
+
+/* -------------------- RATING -------------------- */
+.rating-box {
+    margin-top: 30px;
+}
+
+/* -------------------- PAYMENT POPUP -------------------- */
+#paymentPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#paymentPopup .box {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#paymentPopup img {
+    margin: 15px 0;
+}
+
+#paymentPopup button {
+    padding: 10px 20px;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background: #000;
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+</style>
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h2>Car Garage</h2>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+        <a href="#footer">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<!-- <section class="hero" style="background: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d') center/cover;">
+    <div>
+        <h1>Premium Car Garage Services</h1>
+        <p>100% Trusted • 15+ Years Experience • Fast Delivery</p>
+
+        <button onclick="window.location='#booking'">Book Service</button>
+        <button onclick="openPayment()">Pay Now</button>
+    </div>
+</section> -->
+
+<section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+        <h1>Premium Car Garage Services</h1>
+        <p>100% Trusted • 15+ Years Experience • Fast Delivery</p>
+
+        <button onclick="window.location='#booking'">Book Service</button>
+        <button onclick="openPayment()">Pay Now</button>
+    </div>
+</section>
+
+
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+
+    <div class="service-box">
+
+        <div class="service">
+            <h3>Engine Repair</h3>
+            <p>Complete engine diagnostics, repair and performance tuning using advanced tools.</p>
+            <p><b>Price:</b> ₹1999 onwards</p>
+        </div>
+
+        <div class="service">
+            <h3>Oil Change</h3>
+            <p>High-quality engine oil replacement with filter cleaning for smooth performance.</p>
+            <p><b>Time:</b> 30 minutes</p>
+        </div>
+
+        <div class="service">
+            <h3>Car Spa</h3>
+            <p>Interior & exterior deep cleaning, polishing and ceramic coating.</p>
+            <p><b>Includes:</b> Foam wash, vacuum, polish</p>
+        </div>
+
+        <div class="service">
+            <h3>Tyre Replacement</h3>
+            <p>All branded tyres available with wheel alignment and balancing service.</p>
+            <p><b>Brands:</b> MRF, Apollo, Bridgestone</p>
+        </div>
+
+        <div class="service">
+            <h3>Inspection</h3>
+            <p>40-point inspection covering engine, brakes, suspension and electrical system.</p>
+            <p><b>Report:</b> Detailed health report provided</p>
+        </div>
+
+        <div class="service">
+            <h3>Battery Check</h3>
+            <p>Battery testing, charging and replacement with warranty support.</p>
+            <p><b>Warranty:</b> Up to 3 years</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- galary -->
+ <section id="gallery" class="gallery">
+    <h2>Our Garage Gallery</h2>
+
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf">
+        <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def">
+        <img src="https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+        <img src="https://images.unsplash.com/photo-1498887960847-2a5e46312788">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking">
+    <h2>Book Your Service</h2>
+
+    <form method="POST" action="/booking">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="car" placeholder="Car Model" required>
+        <input type="date" name="date" required>
+
+        <select name="service" required>
+            <option value="">Select Service</option>
+            <option>Engine Repair</option>
+            <option>Oil Change</option>
+            <option>Car Spa</option>
+            <option>Tyre Replacement</option>
+            <option>Inspection</option>
+            <option>Battery Check</option>
+        </select>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</section>
+
+<!-- PAYMENT POPUP -->
+<div id="paymentPopup">
+    <div class="box">
+        <h3>Scan to Pay</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=UPI">
+        <br>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <h3>Car Garage Services</h3>
+    <p><b>Address:</b> Near Main Highway, Pune, Maharashtra</p>
+    <p><b>Phone:</b> +91 9876543210</p>
+    <p><b>Email:</b> cargarage@support.com</p>
+    <p><b>Timings:</b> Mon–Sun: 9 AM to 9 PM</p>
+    <p>© 2025 Car Garage — All Rights Reserved</p>
+</footer>
+
+<script>
+function openPayment() {
+    document.getElementById("paymentPopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("paymentPopup").style.display = "none";
+}
+</script>
+<script>
+// Background images list
+const images = [
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
+    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf",
+    "https://images.unsplash.com/photo-1502877338535-766e1452684a",
+    "https://images.unsplash.com/photo-1504215680853-026ed2a45def",
+    "https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9",
+    "https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+];
+
+let index = 0;
+const hero = document.querySelector(".hero");
+
+// Function to change background
+function changeBackground() {
+    hero.style.background = `url('${images[index]}') center/cover no-repeat`;
+    index = (index + 1) % images.length;
+}
+
+// Change every 3 seconds
+setInterval(changeBackground, 3000);
+</script>
+
+</body>
+</html>

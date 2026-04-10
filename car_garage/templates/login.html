@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body { background:#111; color:white; display:flex; justify-content:center; align-items:center; height:100vh; }
+        .box { background:#222; padding:30px; border-radius:10px; width:300px; text-align:center; }
+        input { width:100%; padding:10px; margin:10px 0; border:none; border-radius:5px; }
+        button { background:orange; padding:10px; width:100%; border:none; font-weight:bold; }
+        a { color:orange; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Car Garage Login</h2>
+
+    <form method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <p>New user? <a href="/register">Register</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<style>
+/* Navbar Right Section */
+.user-box {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+}
+
+/* Welcome Text */
+.user-box span {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Logout Button */
+.logout-btn {
+    text-decoration: none;
+    background: orange;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #ff8800;
+}
+
+/* Booking Button */
+.book-btn {
+    background: orange;
+    color: black;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background: #ff8800;
+}
+</style>
+
+<!-- NAVBAR RIGHT -->
+<div class="user-box">
+    <span>Welcome, {{ session['user_name'] }}</span>
+    <a href="/logout" class="logout-btn">Logout</a>
+    <a href="/booking" class="book-btn">Booking Service</a>
+</div>

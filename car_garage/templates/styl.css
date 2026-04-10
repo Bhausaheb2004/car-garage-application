@@ -1,0 +1,441 @@
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+section{
+    width:100%;
+    padding:70px 7%;
+}
+
+header{
+    width:100%;
+    padding:25px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    background:#000000d9;
+    z-index:100;
+    backdrop-filter: blur(6px);
+}
+header h2{
+    font-size:28px;
+    color:#ff9800;
+    font-weight:700;
+}
+header nav a{
+    color:#fff;
+    margin-left:25px;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+header nav a:hover{
+    color:#ff9800;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding-top:110px;
+    transition:background 0.5s linear;
+}
+.hero h1{
+    font-size:60px;
+    font-weight:800;
+}
+.hero p{
+    font-size:20px;
+    margin:15px 0 25px;
+}
+.hero button{
+    padding:12px 25px;
+    font-size:18px;
+    background:#ff9800;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:#000;
+    font-weight:600;
+    transition:0.3s;
+    margin:5px;
+}
+.hero button:hover{
+    background:#ffa726;
+}
+
+.services h2,
+.gallery h2,
+.booking h2{
+    font-size:40px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.service-box{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+.service{
+    width:30%;
+    min-width:250px;
+    padding:20px;
+    background:#1e1e1e;
+    border-radius:10px;
+    transition:0.3s;
+    border:1px solid #333;
+}
+.service:hover{
+    transform: translateY(-10px);
+    border-color:#ff9800;
+}
+.service h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.gallery-container img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+.gallery-container img:hover{
+    transform:scale(1.05);
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid #444;
+}
+form input,
+form select{
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border-radius:5px;
+    border:none;
+}
+form button{
+    width:100%;
+    padding:14px;
+    background:#ff9800;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+}
+form button:hover{
+    background:#ffa726;
+}
+
+.rating-box{
+    text-align:center;
+    margin-top:40px;
+}
+.stars{
+    font-size:40px;
+    cursor:pointer;
+}
+.stars span{
+    color:#555;
+    transition:0.3s;
+}
+.stars span.active{
+    color:#ff9800;
+}
+.rating-msg{
+    margin-top:10px;
+    font-size:18px;
+    color:#ff9800;
+}
+
+#paymentPopup{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+#paymentPopup .box{
+    background:#222;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+}
+#paymentPopup img{
+    width:230px;
+    margin-top:10px;
+}
+#paymentPopup button{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#ff9800;
+    border:none;
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+footer{
+    background:#000;
+    padding:40px 7%;
+    margin-top:40px;
+    text-align:center;
+}
+footer h3{
+    color:#ff9800;
+    margin-bottom:10px;
+}
+
+@media(max-width:768px){
+    .hero h1{font-size:42px;}
+    .service{width:100%;}
+} */
+
+
+
+
+
+/* -------------------- GLOBAL -------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h2 {
+    color: orange;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 15px 0;
+}
+
+.hero button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #ff8800;
+}
+
+/* -------------------- SERVICES -------------------- */
+.services {
+    padding: 60px 20px;
+}
+
+.service-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px orange;
+}
+
+/* -------------------- GALLERY -------------------- */
+.gallery {
+    padding: 50px 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* -------------------- BOOKING -------------------- */
+.booking {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.booking form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.booking input,
+.booking select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+}
+
+.booking input:focus,
+.booking select:focus {
+    outline: none;
+    border: 1px solid orange;
+}
+
+.booking button {
+    width: 100%;
+    padding: 12px;
+    background: orange;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.booking button:hover {
+    background: #ff8800;
+}
+
+/* -------------------- RATING -------------------- */
+.rating-box {
+    margin-top: 30px;
+}
+
+.stars span {
+    font-size: 25px;
+    cursor: pointer;
+    color: orange;
+}
+
+/* -------------------- PAYMENT POPUP -------------------- */
+#paymentPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#paymentPopup .box {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#paymentPopup img {
+    margin: 15px 0;
+}
+
+#paymentPopup button {
+    padding: 10px 20px;
+    background: orange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    background: #000;
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                        url("https://images.unsplash.com/photo-1493238792000-8113da705763");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255,165,0,0.3);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: orange;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 1px solid orange;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: orange;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff8800;
+        }
+
+        a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="register-box">
+    <h2>Create Account</h2>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>
+
+</body>
+</html>
